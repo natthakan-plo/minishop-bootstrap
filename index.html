@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniShop - หน้าแรก</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .banner-img {
+        height: 380px;
+        object-fit: cover;
+        object-position: center 30%;
+      }
+      .text-shadow {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      }
+      /* ปุ่มไลน์ลอยมุมขวาล่าง */
+      .line-chat-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+      .line-chat-btn:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <header class="navbar bg-white border-bottom p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand text-danger fw-bold fs-3" href="#"
+          >🛍️ MiniShop</a
+        >
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- เส้นตรง 3 ขีดขนานกัน (สลับร่างเป็นสีเข้มอัตโนมัติ) -->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 2. กล่องรายการเมนูลิงก์และระบบค้นหา (ผูก ID สอดรับกับปุ่มแฮมเบอร์เกอร์ด้านบน) -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- ปรับให้ไอเทมทุกชิ้นล็อกพิกัดอยู่กึ่งกลางแนวดิ่งด้วย align-items-lg-center -->
+            <ul class="navbar-nav ms-auto fs-6 fw-medium align-items-lg-center">
+              <li class="nav-item">
+                <!-- 📌 เอา text-white ออก เพื่อให้ปล่อยสีเข้มตามคลาสแม่ navbar-light -->
+                <a class="nav-link" href="index.html">🏠 หน้าแรก</a>
+              </li>
+              <li class="nav-item">
+                <!-- 🔗 ลิงก์ไปยังหน้าคลังสินค้าหน้าแรกจริง -->
+                <a class="nav-link" href="all-products-p1.html"
+                  >🛒 สินค้าทั้งหมด</a
+                >
+              </li>
+              <li class="nav-item">
+                <!-- 🔗 ลิงก์ไปยังหน้าตารางประวัติการสั่งซื้อ -->
+                <a class="nav-link" href="order-history.html"
+                  >📦 ประวัติการสั่งซื้อ</a
+                >
+              </li>
+
+              <!-- 🔍 3. ช่องฟอร์มค้นหาสินค้าด่วนแบบ Inline สไตล์มินิมอล -->
+              <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                <form class="d-flex" role="search" action="#">
+                  <!-- ช่องกรอกคำค้น ขอบมนแคปซูล พื้นหลังสว่างตัดขอบเทาจาง -->
+                  <input
+                    class="form-control form-control-sm me-2 rounded-pill bg-light text-dark border-secondary-subtle"
+                    type="search"
+                    placeholder="🔍 ค้นหาสินค้า..."
+                    aria-label="Search"
+                  />
+                  <!-- ปุ่มกดส่งคำค้นขอบเส้นสีเข้มมินิมอล -->
+                  <button
+                    class="btn btn-outline-dark btn-sm rounded-pill fw-medium"
+                    type="submit"
+                  >
+                    ค้นหา
+                  </button>
+                </form>
+              </li>
+
+              <li class="nav-item ms-lg-3 mb-2 mb-lg-0">
+                <!-- 🔗 ปุ่มลิงก์สลับไปหน้าจอระบบล็อกอินสมาชิก -->
+                <a
+                  class="btn btn-danger btn-sm text-white px-3 fw-bold rounded-pill"
+                  href="login.html"
+                  >🔓 เข้าสู่ระบบ</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Banner (รูปภาพม้า) -->
+    <div class="position-relative">
+      <img
+        src="images/banner1.jpg"
+        class="w-100 banner-img"
+        alt="Horse Banner"
+      />
+      <div
+        class="position-absolute top-50 start-50 translate-middle text-center text-white text-shadow w-100 px-3"
+      >
+        <h1 class="fw-bold display-5">ยินดีต้อนรับสู่ MiniShop</h1>
+        <p class="fs-5">แหล่งรวมสินค้าไอทีและอุปกรณ์การเรียนครบวงจร</p>
+      </div>
+    </div>
+
+    <!-- แนะนำประจำสัปดาห์ -->
+    <div class="container mt-5 mb-5">
+      <div class="d-flex align-items-center mb-4">
+        <h3 class="m-0 fw-bold">☀️ สินค้าแนะนำประจำสัปดาห์</h3>
+        <span class="badge bg-danger ms-2 rounded-pill px-3">HOT</span>
+      </div>
+
+      <div class="row g-4">
+        <!-- สินค้าที่ 1 (ดูสเปกได้) -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div
+            class="card h-100 border-0 shadow-sm position-relative overflow-hidden"
+          >
+            <span
+              class="badge bg-warning text-dark position-absolute top-0 start-0 m-2 px-2 py-1 small"
+              >🔥 สินค้าแนะนำ</span
+            >
+            <img
+              src="images/banner1.jpg"
+              class="card-img-top"
+              style="height: 180px; object-fit: cover"
+            />
+            <div class="card-body d-flex flex-column p-3">
+              <h6 class="fw-bold text-dark mb-1">โน้ตบุ๊กประสิทธิภาพสูง</h6>
+              <p class="text-muted small flex-grow-1 mb-2">
+                สเปกแรงสะใจ เหมาะสำหรับการเรียน เขียนโค้ด และทำงานกราฟิก
+              </p>
+              <p class="text-danger fw-bold fs-5 mb-3">25,900 บาท</p>
+              <!-- ปุ่มเปิด Modal สเปกสินค้า -->
+              <button
+                class="btn btn-sm btn-outline-secondary mb-2 rounded-1"
+                data-bs-toggle="modal"
+                data-bs-target="#specModal"
+              >
+                🔎 ดูสเปกและรายละเอียดด่วน
+              </button>
+              <a href="#" class="btn btn-sm btn-danger rounded-1"
+                >🛒 สั่งซื้อสินค้า</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- สินค้าที่ 2 (แมลงปอ) -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <img
+              src="images/banner2.jpg"
+              class="card-img-top"
+              style="height: 180px; object-fit: cover"
+            />
+            <div class="card-body d-flex flex-column p-3">
+              <h6 class="fw-bold text-dark mb-1">สมาร์ตโฟนหน้าจอพับ</h6>
+              <p class="text-muted small flex-grow-1 mb-2">
+                นวัตกรรมล้ำสมัย กล้องคมชัด แบตเตอรี่อึดใช้งานได้ตลอดวัน
+              </p>
+              <p class="text-danger fw-bold fs-5 mb-3">32,900 บาท</p>
+              <a href="#" class="btn btn-sm btn-danger mt-auto rounded-1"
+                >🛒 สั่งซื้อสินค้า</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- สินค้าที่ 3 (นก) -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <img
+              src="images/banner3.jpg"
+              class="card-img-top"
+              style="height: 180px; object-fit: cover"
+            />
+            <div class="card-body d-flex flex-column p-3">
+              <h6 class="fw-bold text-dark mb-1">หูฟังไร้สายตัดเสียงรบกวน</h6>
+              <p class="text-muted small flex-grow-1 mb-2">
+                เสียงเบสแน่น เบาสบายหู มีระบบ ANC ตัดเสียงรอบข้างได้เงียบสนิท
+              </p>
+              <p class="text-danger fw-bold fs-5 mb-3">5,900 บาท</p>
+              <a href="#" class="btn btn-sm btn-danger mt-auto rounded-1"
+                >🛒 สั่งซื้อสินค้า</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- สินค้าที่ 4 (กวาง) -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <img
+              src="images/banner4.jpg"
+              class="card-img-top"
+              style="height: 180px; object-fit: cover"
+            />
+            <div class="card-body d-flex flex-column p-3">
+              <h6 class="fw-bold text-dark mb-1">แท็บเล็ตเพื่อการศึกษา</h6>
+              <p class="text-muted small flex-grow-1 mb-2">
+                หน้าจอกว้าง ถนอมสายตา รองรับปากกาสำหรับจดโน้ตและวาดภาพ
+              </p>
+              <p class="text-danger fw-bold fs-5 mb-3">14,900 บาท</p>
+              <a href="#" class="btn btn-sm btn-danger mt-auto rounded-1"
+                >🛒 สั่งซื้อสินค้า</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal แสดงสเปกสินค้าชิ้นแรก -->
+    <div
+      class="modal fade"
+      id="specModal"
+      tabindex="-1"
+      aria-labelledby="specModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="specModalLabel">
+              💻 สเปก โน้ตบุ๊กประสิทธิภาพสูง
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="text-center mb-3">
+              <img
+                src="images/banner1.jpg"
+                class="img-fluid rounded"
+                style="max-height: 200px; object-fit: cover; width: 100%"
+              />
+            </div>
+            <table class="table table-striped table-sm small">
+              <tr>
+                <th width="35%">หน่วยประมวลผล</th>
+                <td>Intel Core i7 Gen 13 / AMD Ryzen 7</td>
+              </tr>
+              <tr>
+                <th>หน่วยความจำ (RAM)</th>
+                <td>16GB DDR5 4800MHz</td>
+              </tr>
+              <tr>
+                <th>พื้นที่เก็บข้อมูล</th>
+                <td>512GB SSD PCIe NVMe M.2</td>
+              </tr>
+              <tr>
+                <th>หน้าจอแสดงผล</th>
+                <td>15.6 นิ้ว Full HD IPS 144Hz</td>
+              </tr>
+              <tr>
+                <th>การ์ดจอ (GPU)</th>
+                <td>NVIDIA GeForce RTX 4050 (6GB GDDR6)</td>
+              </tr>
+              <tr>
+                <th>ระบบปฏิบัติการ</th>
+                <td>Windows 11 Home (แท้)</td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-sm btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              ปิดหน้าต่าง
+            </button>
+            <a href="#" class="btn btn-sm btn-danger">🛒 สั่งซื้อทันที</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+      <div class="container small text-white-50">
+        <p class="m-0">
+          &copy; 2026 MiniShop - All Rights Reserved. พัฒนาด้วย Bootstrap 5
+          โดยนักศึกษาเทคโนโลยีธุรกิจดิจิทัล
+        </p>
+      </div>
+    </footer>
+
+    <!-- ปุ่มแชทไลน์ลอย (ติดต่อผ่านไลน์ได้จริงเมื่อคลิก) -->
+    <a
+      href="https://line.me/ti/p/~nattakanplodyota"
+      target="_blank"
+      class="btn btn-success line-chat-btn px-4 py-2 small"
+    >
+      <i class="fab fa-line fa-lg me-1"></i> แชทผ่านไลน์
+    </a>
+
+    <!-- Bootstrap 5 JS Bundle (สำคัญมากสำหรับการกดสเปกและเมนูแฮมเบอร์เกอร์) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div
+      class="div-bottom-nav position-fixed bottom-0 start-0 end-0 bg-white border-top shadow d-lg-none z-3"
+    >
+      <div class="container-fluid px-0">
+        <div class="row g-0 text-center py-2">
+          <div class="col-3">
+            <a
+              href="index.html"
+              class="text-decoration-none text-dark d-flex flex-column align-items-center"
+            >
+              <span class="fs-4">🏠</span>
+              <span
+                class="fs-7 fw-medium text-secondary"
+                style="font-size: 11px"
+                >หน้าแรก</span
+              >
+            </a>
+          </div>
+
+          <div class="col-3">
+            <a
+              href="all-products-p1.html"
+              class="text-decoration-none text-dark d-flex flex-column align-items-center"
+            >
+              <span class="fs-4">🛒</span>
+              <span
+                class="fs-7 fw-medium text-secondary"
+                style="font-size: 11px"
+                >สินค้า</span
+              >
+            </a>
+          </div>
+
+          <div class="col-3">
+            <a
+              href="order-history.html"
+              class="text-decoration-none text-dark d-flex flex-column align-items-center"
+            >
+              <span class="fs-4">📦</span>
+              <span
+                class="fs-7 fw-medium text-secondary"
+                style="font-size: 11px"
+                >ประวัติ</span
+              >
+            </a>
+          </div>
+
+          <div class="col-3">
+            <a
+              href="login.html"
+              class="text-decoration-none text-dark d-flex flex-column align-items-center"
+            >
+              <span class="fs-4">👤</span>
+              <span
+                class="fs-7 fw-medium text-secondary"
+                style="font-size: 11px"
+                >บัญชี</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

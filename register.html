@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniShop - สมัครสมาชิกใหม่</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <header class="navbar bg-white border-bottom p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand text-danger fw-bold fs-3" href="#"
+          >🛍️ MiniShop</a
+        >
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- เส้นตรง 3 ขีดขนานกัน (สลับร่างเป็นสีเข้มอัตโนมัติ) -->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 2. กล่องรายการเมนูลิงก์และระบบค้นหา (ผูก ID สอดรับกับปุ่มแฮมเบอร์เกอร์ด้านบน) -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- ปรับให้ไอเทมทุกชิ้นล็อกพิกัดอยู่กึ่งกลางแนวดิ่งด้วย align-items-lg-center -->
+            <ul class="navbar-nav ms-auto fs-6 fw-medium align-items-lg-center">
+              <li class="nav-item">
+                <!-- 📌 เอา text-white ออก เพื่อให้ปล่อยสีเข้มตามคลาสแม่ navbar-light -->
+                <a class="nav-link" href="index.html">🏠 หน้าแรก</a>
+              </li>
+              <li class="nav-item">
+                <!-- 🔗 ลิงก์ไปยังหน้าคลังสินค้าหน้าแรกจริง -->
+                <a class="nav-link" href="all-products-p1.html"
+                  >🛒 สินค้าทั้งหมด</a
+                >
+              </li>
+              <li class="nav-item">
+                <!-- 🔗 ลิงก์ไปยังหน้าตารางประวัติการสั่งซื้อ -->
+                <a class="nav-link" href="order-history.html"
+                  >📦 ประวัติการสั่งซื้อ</a
+                >
+              </li>
+
+              <!-- 🔍 3. ช่องฟอร์มค้นหาสินค้าด่วนแบบ Inline สไตล์มินิมอล -->
+              <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                <form class="d-flex" role="search" action="#">
+                  <!-- ช่องกรอกคำค้น ขอบมนแคปซูล พื้นหลังสว่างตัดขอบเทาจาง -->
+                  <input
+                    class="form-control form-control-sm me-2 rounded-pill bg-light text-dark border-secondary-subtle"
+                    type="search"
+                    placeholder="🔍 ค้นหาสินค้า..."
+                    aria-label="Search"
+                  />
+                  <!-- ปุ่มกดส่งคำค้นขอบเส้นสีเข้มมินิมอล -->
+                  <button
+                    class="btn btn-outline-dark btn-sm rounded-pill fw-medium"
+                    type="submit"
+                  >
+                    ค้นหา
+                  </button>
+                </form>
+              </li>
+
+              <li class="nav-item ms-lg-3 mb-2 mb-lg-0">
+                <!-- 🔗 ปุ่มลิงก์สลับไปหน้าจอระบบล็อกอินสมาชิก -->
+                <a
+                  class="btn btn-danger btn-sm text-white px-3 fw-bold rounded-pill"
+                  href="login.html"
+                  >🔓 เข้าสู่ระบบ</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+<body class="bg-light d-flex align-items-center justify-content-center py-5" style="min-height: 100vh;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-5">
+                <div class="card border-0 shadow-sm p-4 bg-white rounded-3">
+                    <h4 class="text-center fw-bold mb-4">📝 สมัครสมาชิกใหม่</h4>
+                    <form>
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <label class="form-label small text-muted">ชื่อจริง</label>
+                                <input type="text" class="form-control" placeholder="สมชาย" required>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small text-muted">นามสกุล</label>
+                                <input type="text" class="form-control" placeholder="ตั้งใจเรียน" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small text-muted d-block">ระบุเพศ</label>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" checked>
+                                <label class="form-check-label small" for="male">ชาย</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female">
+                                <label class="form-check-label small" for="female">หญิง</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">เบอร์โทรศัพท์ติดต่อ (เฉพาะตัวเลข 9 หลักหลังรหัสประเทศ)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">+66</span>
+                                <input type="tel" class="form-control" placeholder="812345678" pattern="[0-9]{9}" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">ประเภทสมาชิก</label>
+                            <select class="form-select" required>
+                                <option value="" selected disabled>-- เลือกประเภทสมาชิก --</option>
+                                <option>ลูกค้าทั่วไป</option>
+                                <option>ร้านค้าปลีก</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">ตั้งรหัสผ่านใหม่ (อย่างน้อย 8 ตัวอักษร)</label>
+                            <input type="password" class="form-control" placeholder="ตั้งรหัสผ่านใหม่ (อย่างน้อย 8 ตัวอักษร)" minlength="8" required>
+                        </div>
+
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="promo">
+                            <label class="form-check-label small text-muted" for="promo">เปิดรับข่าวสารและโปรโมชันพิเศษทางอีเมล</label>
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label small text-muted" for="terms">ฉันยอมรับเงื่อนไขและข้อตกลงการใช้งานระบบทุกประการ</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 fw-bold py-2 rounded-1">✨ ลงทะเบียนสมาชิก</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <small><a href="login.html" class="text-secondary text-decoration-none">← กลับไปหน้าเข้าสู่ระบบ</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="div-bottom-nav position-fixed bottom-0 start-0 end-0 bg-white border-top shadow d-lg-none z-3">
+        <div class="container-fluid px-0">
+            <div class="row g-0 text-center py-2">
+                
+                <div class="col-3">
+                    <a href="index.html" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <span class="fs-4">🏠</span>
+                        <span class="fs-7 fw-medium text-secondary" style="font-size: 11px;">หน้าแรก</span>
+                    </a>
+                </div>
+                
+                <div class="col-3">
+                    <a href="all-products-p1.html" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <span class="fs-4">🛒</span>
+                        <span class="fs-7 fw-medium text-secondary" style="font-size: 11px;">สินค้า</span>
+                    </a>
+                </div>
+                
+                <div class="col-3">
+                    <a href="order-history.html" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <span class="fs-4">📦</span>
+                        <span class="fs-7 fw-medium text-secondary" style="font-size: 11px;">ประวัติ</span>
+                    </a>
+                </div>
+                
+                <div class="col-3">
+                    <a href="login.html" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <span class="fs-4">👤</span>
+                        <span class="fs-7 fw-medium text-secondary" style="font-size: 11px;">บัญชี</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

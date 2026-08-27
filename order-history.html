@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniShop - ประวัติการสั่งซื้อ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .line-chat-btn { position: fixed; bottom: 20px; right: 20px; z-index: 1000; border-radius: 50px; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <header class="navbar bg-white border-bottom p-3">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand text-danger fw-bold fs-3" href="#"
+          >🛍️ MiniShop</a
+        >
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- เส้นตรง 3 ขีดขนานกัน (สลับร่างเป็นสีเข้มอัตโนมัติ) -->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- 2. กล่องรายการเมนูลิงก์และระบบค้นหา (ผูก ID สอดรับกับปุ่มแฮมเบอร์เกอร์ด้านบน) -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- ปรับให้ไอเทมทุกชิ้นล็อกพิกัดอยู่กึ่งกลางแนวดิ่งด้วย align-items-lg-center -->
+            <ul class="navbar-nav ms-auto fs-6 fw-medium align-items-lg-center">
+              <li class="nav-item">
+                <!-- 📌 เอา text-white ออก เพื่อให้ปล่อยสีเข้มตามคลาสแม่ navbar-light -->
+                <a class="nav-link" href="index.html">🏠 หน้าแรก</a>
+              </li>
+              <li class="nav-item">
+                <!-- 🔗 ลิงก์ไปยังหน้าคลังสินค้าหน้าแรกจริง -->
+                <a class="nav-link" href="all-products-p1.html"
+                  >🛒 สินค้าทั้งหมด</a
+                >
+              </li>
+              <li class="nav-item">
+                <!-- 🔗 ลิงก์ไปยังหน้าตารางประวัติการสั่งซื้อ -->
+                <a class="nav-link" href="order-history.html"
+                  >📦 ประวัติการสั่งซื้อ</a
+                >
+              </li>
+
+              <!-- 🔍 3. ช่องฟอร์มค้นหาสินค้าด่วนแบบ Inline สไตล์มินิมอล -->
+              <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                <form class="d-flex" role="search" action="#">
+                  <!-- ช่องกรอกคำค้น ขอบมนแคปซูล พื้นหลังสว่างตัดขอบเทาจาง -->
+                  <input
+                    class="form-control form-control-sm me-2 rounded-pill bg-light text-dark border-secondary-subtle"
+                    type="search"
+                    placeholder="🔍 ค้นหาสินค้า..."
+                    aria-label="Search"
+                  />
+                  <!-- ปุ่มกดส่งคำค้นขอบเส้นสีเข้มมินิมอล -->
+                  <button
+                    class="btn btn-outline-dark btn-sm rounded-pill fw-medium"
+                    type="submit"
+                  >
+                    ค้นหา
+                  </button>
+                </form>
+              </li>
+
+              <li class="nav-item ms-lg-3 mb-2 mb-lg-0">
+                <!-- 🔗 ปุ่มลิงก์สลับไปหน้าจอระบบล็อกอินสมาชิก -->
+                <a
+                  class="btn btn-danger btn-sm text-white px-3 fw-bold rounded-pill"
+                  href="login.html"
+                  >🔓 เข้าสู่ระบบ</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="container mt-4 mb-5">
+        <div class="bg-white p-3 rounded shadow-sm mb-4">
+            <small>
+                <a href="index.html" class="text-danger text-decoration-none">หน้าแรก</a> / 
+                <span class="text-muted">ประวัติการสั่งซื้อของฉัน</span>
+            </small>
+        </div>
+
+        <h4 class="fw-bold mb-4">📦 ประวัติการสั่งซื้อของฉัน</h4>
+
+        <div class="table-responsive bg-white rounded shadow-sm">
+            <table class="table table-hover align-middle mb-0 text-nowrap" style="font-size: 14px;">
+                <thead class="table-dark text-white">
+                    <tr>
+                        <th class="py-3 px-3">เลขที่ใบสั่งซื้อ</th>
+                        <th class="py-3">รายการสินค้า</th>
+                        <th class="py-3">วันที่สั่งซื้อ</th>
+                        <th class="py-3">ยอดรวมสุทธิ</th>
+                        <th class="py-3 px-3">สถานะการจัดส่ง</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-bold px-3">#MS-9081</td>
+                        <td>โน้ตบุ๊กประสิทธิภาพสูง</td>
+                        <td>01 ก.ค. 2026</td>
+                        <td class="text-danger fw-bold">25,900 บาท</td>
+                        <td class="px-3"><span class="badge bg-success rounded-pill px-3 py-1.5" style="font-size: 11px;">จัดส่งสำเร็จ</span></td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold px-3">#MS-9082</td>
+                        <td>สมาร์ตโฟนหน้าจอพับ</td>
+                        <td>28 มิ.ย. 2026</td>
+                        <td class="text-danger fw-bold">32,900 บาท</td>
+                        <td class="px-3"><span class="badge bg-warning text-dark rounded-pill px-3 py-1.5" style="font-size: 11px;">กำลังจัดส่ง</span></td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold px-3">#MS-9083</td>
+                        <td>หูฟังไร้สายตัดเสียงรบกวน</td>
+                        <td>25 มิ.ย. 2026</td>
+                        <td class="text-danger fw-bold">5,900 บาท</td>
+                        <td class="px-3"><span class="badge bg-secondary rounded-pill px-3 py-1.5" style="font-size: 11px;">ยกเลิกออเดอร์</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Line Chat -->
+    <a href="https://line.me/ti/p/~YOUR_LINE_ID" target="_blank" class="btn btn-success line-chat-btn px-4 py-2">
+        <i class="fab fa-line fa-lg me-1"></i> แชทคุยกับเรา
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<div class="div-bottom-nav position-fixed bottom-0 start-0 end-0 bg-white border-top shadow d-lg-none z-3">
+        <div class="container-fluid px-0">
+            <div class="row g-0 text-center py-2">
+                
+                <div class="col-3">
+                    <a href="index.html" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <span class="fs-4">🏠</span>
+                        <span class="fs-7 fw-medium text-secondary" style="font-size: 11px;">หน้าแรก</span>
+                    </a>
+                </div>
+                
+                <div class="col-3">
+                    <a href="all-products-p1.html" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <span class="fs-4">🛒</span>
+                        <span class="fs-7 fw-medium text-secondary" style="font-size: 11px;">สินค้า</span>
+                    </a>
+                </div>
+                
+                <div class="col-3">
+                    <a href="order-history.html" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <span class="fs-4">📦</span>
+                        <span class="fs-7 fw-medium text-secondary" style="font-size: 11px;">ประวัติ</span>
+                    </a>
+                </div>
+                
+                <div class="col-3">
+                    <a href="login.html" class="text-decoration-none text-dark d-flex flex-column align-items-center">
+                        <span class="fs-4">👤</span>
+                        <span class="fs-7 fw-medium text-secondary" style="font-size: 11px;">บัญชี</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
